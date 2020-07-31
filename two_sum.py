@@ -23,6 +23,8 @@ def twoSum(nums, target):
         if pair in cache:
             return [cache[pair], i]
         cache[num] = i
+        print(cache)
+
     return None
 
 
