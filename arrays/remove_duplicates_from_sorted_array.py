@@ -24,12 +24,16 @@ def removeDuplicates(nums):
         return len(nums)
 
     for i in range(len(nums)):
+        print("array val: ", nums[i])
+        print("x out: ", nums[x])
         if nums[x] != nums[i]:
+            print("val in loop: ", nums[i])
+            print("X: ", nums[x])
             x += 1
             nums[x] = nums[i]
     return x
 
 
-nums_arr = [1, 1, 2]
+nums_arr = [1, 1, 2, 3, 4, 4]
 print(removeDuplicates(nums_arr))
 print(nums_arr)
