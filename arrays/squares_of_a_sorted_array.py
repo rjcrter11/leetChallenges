@@ -12,14 +12,23 @@ Output: [0,1,9,16,100]
 
 
 def sortedSquares(nums):
+    # 1
+    # result = []
 
-    result = []
+    # for x in nums:
+    #     x *= x
+    #     result.append(x)
 
-    for x in nums:
-        x *= x
-        result.append(x)
+    # 2
+    # return sorted(result)
 
-    return sorted(result)
+    # for x in range(len(nums)):
+    #     nums[x] *= nums[x]
+
+    # return sorted(nums)
+
+    # 3
+    return sorted([x*x for x in nums])
 
 
 nums_array = [-4, -1, 0, 3, 10]
