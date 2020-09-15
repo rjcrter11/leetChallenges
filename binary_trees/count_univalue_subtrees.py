@@ -29,7 +29,7 @@ class TreeNode:
 
 
 class Solution:
-    def countUnivalSubtrees(self, root: TreeNode) -> int:
+    def countUnivalSubtrees(self, root):
         if root is None:
             return 0
         self.count = 0
