@@ -28,3 +28,12 @@ def containsDuplicate(nums):
         else:
             return True
     return False
+
+    # if len(nums) == len(set(nums)):
+    #     return False
+    # return True
+
+
+arr = [1, 1, 1, 3, 3, 4, 3, 2, 4, 2]
+
+print(containsDuplicate(arr))
