@@ -21,12 +21,12 @@ def groupAnagrams(strs):
     for i in strs:
 
         x = ''.join(sorted(i))
-        print(x)
+
         if x not in result:
             result[x] = [i]
         else:
             result[x].append(i)
-    print(result)
+
     return result.values()
 
 
