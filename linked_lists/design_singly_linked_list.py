@@ -3,11 +3,14 @@ class Node:
         self.val = val
         self.next = None
 
+    def __str__(self):
+        return f'{self.val}'
+
 
 class LinkedList:
     def __init__(self):
         self.size = 0
-        self.head = Node(0)
+        self.head = None
 
     def get(self, index):
         if index < 0 or index >= self.size:
@@ -19,11 +22,30 @@ class LinkedList:
             curr = curr.next
         return curr.val
 
+    # different way w/o recursion
+    def insertHead(self, newNode):
+        tempHead = self.head
+        self.head = newNode
+        newNode.next = tempHead
+        del tempHead
+
     def add_at_head(self, val):
         self.add_at_index(0, val)
 
     def add_at_tail(self, val):
         self.add_at_index(self.size, val)
+
+    # One w/o using self.size / recursion
+    def insertEnd(self, newNode):
+        if self.head is None:
+            self.head = newNode
+        else:
+            last = self.head
+            while True:
+                if last.next is None:
+                    break
+                last = last.next
+            last.next = newNode
 
     def add_at_index(self, index, val):
         if index > self.size:
@@ -42,6 +64,20 @@ class LinkedList:
         add_node.next = prev.next
         prev.next = add_node
 
+    def insert(self, newNode, position):
+        # head=>10->20->None || newNode=>15->None  || position=> 1
+        current = self.head
+        prevNode = current
+        currentPosition = 0
+        while True:
+            if currentPosition == position:
+                prevNode.next = newNode
+                newNode.next = current
+                break
+
+            current = current.next
+            currentPosition += 1
+
     def delete_at_index(self, index):
         if index < 0 or index >= self.size:
             return
@@ -53,3 +89,26 @@ class LinkedList:
         for _ in range(index):
             prev = prev.next
         prev.next = prev.next.next
+
+    def printList(self):
+        if self.head is None:
+            print("List is empty")
+            return
+        current = self.head
+        while True:
+            if current is None:
+                break
+            print(f'{current.val} -> ', end='')
+            current = current.next
+        print('None')
+
+
+first = Node(10)
+ll = LinkedList()
+ll.insertHead(first)
+second = Node(20)
+ll.insertEnd(second)
+third = Node(15)
+ll.insert(third, 1)
+
+ll.printList()
