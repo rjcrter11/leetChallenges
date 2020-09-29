@@ -22,7 +22,16 @@ class LinkedList:
             curr = curr.next
         return curr.val
 
+    def listLength(self):
+        current = self.head
+        length = 0
+        while current is not None:
+            length += 1
+            current = current.next
+        return length
+
     # different way w/o recursion
+
     def insertHead(self, newNode):
         tempHead = self.head
         self.head = newNode
@@ -66,6 +75,12 @@ class LinkedList:
 
     def insert(self, newNode, position):
         # head=>10->20->None || newNode=>15->None  || position=> 1
+        if position < 0 or position > self.listLength():
+            print("Invalid position")
+            return
+        if position == 0:
+            self.insertHead(newNode)
+            return
         current = self.head
         prevNode = current
         currentPosition = 0
