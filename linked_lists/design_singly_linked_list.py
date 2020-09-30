@@ -93,6 +93,15 @@ class LinkedList:
             current = current.next
             currentPosition += 1
 
+    # another way to delete end node
+    def deleteEnd(self):
+        # head=> jon->luke->mark->None
+        last = self.head
+        while last.next is not None:
+            prev = last
+            last = last.next
+        prev.next = None
+
     def delete_at_index(self, index):
         if index < 0 or index >= self.size:
             return
@@ -118,12 +127,12 @@ class LinkedList:
         print('None')
 
 
-first = Node(10)
+first = Node("Jon")
 ll = LinkedList()
 ll.insertHead(first)
-second = Node(20)
+second = Node("Luke")
 ll.insertEnd(second)
-third = Node(15)
-ll.insert(third, 1)
-
+third = Node("Mark")
+ll.insertEnd(third)
+ll.deleteEnd()
 ll.printList()
