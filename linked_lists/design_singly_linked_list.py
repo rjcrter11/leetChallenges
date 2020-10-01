@@ -102,6 +102,34 @@ class LinkedList:
             last = last.next
         prev.next = None
 
+    def deleteIndex(self, position):
+        # head=>jon->luke->mark->None || position 1
+
+        if position < 0 or position >= self.listLength():
+            print('Invalid position')
+            return
+        if self.isListEmpty() is False:
+            if position is 0:
+                self.deleteEnd()
+                return
+
+            current = self.head
+            prev = current
+            currentPosition = 0
+            while True:
+                if currentPosition == position:
+                    prev.next = current.next
+                    current.next = None
+                    break
+                current = current.next
+                currentPosition += 1
+
+    def isListEmpty(self):
+        if self.head is None:
+            return True
+        else:
+            return False
+
     def delete_at_index(self, index):
         if index < 0 or index >= self.size:
             return
@@ -134,5 +162,5 @@ second = Node("Luke")
 ll.insertEnd(second)
 third = Node("Mark")
 ll.insertEnd(third)
-ll.deleteEnd()
+ll.deleteIndex(1)
 ll.printList()
