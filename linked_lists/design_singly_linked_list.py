@@ -109,7 +109,7 @@ class LinkedList:
             print('Invalid position')
             return
         if self.isListEmpty() is False:
-            if position is 0:
+            if position == 0:
                 self.deleteEnd()
                 return
 
@@ -155,12 +155,56 @@ class LinkedList:
         print('None')
 
 
-first = Node("Jon")
-ll = LinkedList()
-ll.insertHead(first)
-second = Node("Luke")
-ll.insertEnd(second)
-third = Node("Mark")
-ll.insertEnd(third)
-ll.deleteIndex(1)
-ll.printList()
+def mergeLists(firstList, secondList, mergedList):
+    # 1->3->4 || 2->7->9 || 1->2->3->4 None
+    currentFirst = firstList.head
+    currentSecond = secondList.head
+    while True:
+        if currentFirst is None:
+            mergedList.insertEnd(currentSecond)
+            break
+        if currentSecond is None:
+            mergedList.insertEnd(currentFirst)
+            break
+        if currentFirst.val < currentSecond.val:
+            currentFirstNext = currentFirst.next
+            currentFirst.next = None
+            mergedList.insertEnd(currentFirst)
+            currentFirst = currentFirstNext
+        else:
+            currentSecondNext = currentSecond.next
+            currentSecond.next = None
+            mergedList.insertEnd(currentSecond)
+            currentSecond = currentSecondNext
+
+
+one = Node(1)
+two = Node(3)
+three = Node(4)
+firstList = LinkedList()
+firstList.insertEnd(one)
+firstList.insertEnd(two)
+firstList.insertEnd(three)
+
+four = Node(2)
+five = Node(7)
+six = Node(9)
+secondList = LinkedList()
+secondList.insertEnd(four)
+secondList.insertEnd(five)
+secondList.insertEnd(six)
+
+print("Printing first List")
+firstList.printList()
+print("Printing second list")
+secondList.printList()
+
+
+mergedList = LinkedList()
+
+mergeLists(firstList, secondList, mergedList)
+del firstList
+del secondList
+
+print("Printing Merged List")
+mergedList.printList()
