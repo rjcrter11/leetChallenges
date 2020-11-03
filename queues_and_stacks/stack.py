@@ -13,6 +13,11 @@ class Stack:
             self.data.pop()
         return 'The stack is empty'
 
+    def is_empty(self):
+        if self.data is None:
+            return True
+        return False
+
     def peek(self):
         if self.data:
             return self.data[-1]
@@ -25,10 +30,16 @@ class LinkedListNode:
         self.data = data
         self.next = None
 
+    def __str__(self):
+        return f'{self.data} --> {self.next}'
+
 
 class StackWithLL:
     def __init__(self):
         self.top = None
+
+    def __str__(self):
+        return f'{self.top}'
 
     def push(self, item):
         # Create a new Node
@@ -39,27 +50,36 @@ class StackWithLL:
         self.top = new_node
 
     def pop(self):
+        # store the popped node
+        data = self.top.data
         # check if the stack is empty
-        if self.top is not None:
-            # store the popped node
-            popped = self.top
+        if self.is_empty() == False:
             # reset top pointer to next node
-            self.top = popped.next
+            self.top = self.top.next
             # return the value from the popped node
-            return popped.data
+            return data
+
+    def is_empty(self):
+        if self.top is None:
+            return True
+        return False
 
     def peek(self):
-        current = self.top.data
 
-        while current.next is not None:
-            current = current.next
+        return self.top.data
+        # current = self.top.data
 
-        return current
+        # while current.next is not None:
+        #     current = current.next
+
+        # return current
 
 
-s = Stack()
+s = StackWithLL()
 s.push(5)
 s.push(6)
 s.push(7)
+print(s)
 print(s.peek())
+print(s.pop())
 print(s)
