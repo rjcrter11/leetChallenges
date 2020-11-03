@@ -14,11 +14,10 @@ class Stack:
         return 'The stack is empty'
 
     def peek(self):
-        if len(self.data) > 0:
-            print(self.data[-1])
-
-        if len(self.data) == 0:
-            return
+        if self.data:
+            return self.data[-1]
+        else:
+            return "Stack is empty"
 
 
 class LinkedListNode:
@@ -48,3 +47,11 @@ class StackWithLL:
             self.top = popped.next
             # return the value from the popped node
             return popped.data
+
+    def peek(self):
+        current = self.top
+
+        while current.next is not None:
+            current = current.next
+        peeked = current
+        return peeked.data
