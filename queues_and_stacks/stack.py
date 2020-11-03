@@ -49,9 +49,17 @@ class StackWithLL:
             return popped.data
 
     def peek(self):
-        current = self.top
+        current = self.top.data
 
         while current.next is not None:
             current = current.next
-        peeked = current
-        return peeked.data
+
+        return current
+
+
+s = Stack()
+s.push(5)
+s.push(6)
+s.push(7)
+print(s.peek())
+print(s)
