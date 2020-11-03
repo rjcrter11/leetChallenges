@@ -19,3 +19,32 @@ class Stack:
 
         if len(self.data) == 0:
             return
+
+
+class LinkedListNode:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+class StackWithLL:
+    def __init__(self):
+        self.top = None
+
+    def push(self, item):
+        # Create a new Node
+        new_node = LinkedListNode(item)
+        # set current top to new_node's next
+        new_node.next = self.top
+        # reset the top pointer to the new node
+        self.top = new_node
+
+    def pop(self):
+        # check if the stack is empty
+        if self.top is not None:
+            # store the popped node
+            popped = self.top
+            # reset top pointer to next node
+            self.top = popped.next
+            # return the value from the popped node
+            return popped.data
