@@ -43,3 +43,14 @@ class Queue:
         if self.front is None:
             return True
         return False
+
+    def peek(self):
+        peeked = self.front
+        if self.front is not None:
+            return peeked.data
+        return "Queue is empty"
+
+
+q = Queue()
+q.enqueue(5)
+print(q.peek())
