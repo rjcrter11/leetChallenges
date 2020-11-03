@@ -3,11 +3,17 @@ class LinkedList:
         self.data = data
         self.next = None
 
+    def __str__(self):
+        return f'{self.data} '
+
 
 class Queue:
     def __init__(self):
         self.front = None
         self.rear = None
+
+    def __str__(self):
+        return f'{self.front} --> {self.rear}'
 
     def enqueue(self, item):
         new_node = LinkedList(item)
@@ -32,3 +38,8 @@ class Queue:
             self.rear = None
 
         return old_front
+
+    def is_empty(self):
+        if self.front is None:
+            return True
+        return False
