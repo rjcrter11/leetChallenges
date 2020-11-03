@@ -49,3 +49,30 @@ class Queue:
         if self.front is not None:
             return peeked.data
         return "Queue is empty"
+
+
+class QueueArray():
+    def __init__(self):
+        self.data = []
+
+    def __str__(self):
+        return f'{self.data}'
+
+    def enqueue(self, item):
+        self.data.append(item)
+
+    def dequeue(self):
+        if len(self.data) > 0:
+            self.data.pop(0)
+        else:
+            return "The queue is empty"
+
+    def peek(self):
+        if self.data:
+            return self.data[0]
+        return "The queue is empty"
+
+    def is_empty(self):
+        if self.data is None:
+            return True
+        return False
