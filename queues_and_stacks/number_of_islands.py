@@ -45,7 +45,7 @@ class Solution(object):
         self.part_of_island(i, j+1, grid)
         self.part_of_island(i, j-1, grid)
         self.part_of_island(i+1, j, grid)
-        self.part_of_island(i-1, j+1, grid)
+        self.part_of_island(i-1, j, grid)
 
 
 island_array = [["1", "1", "0", "0", "0"],
