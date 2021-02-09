@@ -13,26 +13,23 @@ output [28, 26]
 
 
 def smallestDifference(arrayOne, arrayTwo):
-    # Write your code here.
     arrayOne.sort()
+    arrayTwo.sort()
 
+    smallest = float('inf')
+    i = 0
+    j = 0
 
-arrayTwo.sort()
-
-smallest = float('inf')
-i = 0
-j = 0
-
-while i < len(arrayOne) and j < len(arrayTwo):
-		value = abs(arrayOne[i] - arrayTwo[j])
-		if value == 0:
-			return [arrayOne[i], arrayTwo[j]]
-		if value < smallest:
-			smallest = value
-			print(smallest)
-			output = [arrayOne[i], arrayTwo[j]]
-		if arrayOne[i] < arrayTwo[j]:
-			i += 1
-		else:
-			j += 1
-	return output
+    while i < len(arrayOne) and j < len(arrayTwo):
+        value = abs(arrayOne[i] - arrayTwo[j])
+        if value == 0:
+            return [arrayOne[i], arrayTwo[j]]
+        if value < smallest:
+            smallest = value
+            print(smallest)
+            output = [arrayOne[i], arrayTwo[j]]
+        if arrayOne[i] < arrayTwo[j]:
+            i += 1
+        else:
+            j += 1
+    return output
