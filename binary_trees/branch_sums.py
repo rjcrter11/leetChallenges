@@ -32,3 +32,26 @@ def sumsHelper(node, runningSum, sums):
 
     sumsHelper(node.left, newSum, sums)
     sumsHelper(node.right, newSum, sums)
+
+
+def branchSums2(root):
+    currentSum = 0
+    sums = []
+
+    stack = [{"node": root, "currentSum": currentSum}]
+
+    while stack:
+        nodeInfo = stack.pop()
+        node = nodeInfo['node']
+        currentSum = nodeInfo['currentSum']
+
+        if node is None:
+            continue
+        currentSum += node.value
+
+        if node.left is None and node.right is None:
+            sums.append(currentSum)
+
+        stack.append({'node': node.left, 'currentSum': currentSum})
+        stack.append({'node': node.right, 'currentSum': currentSum})
+    return sums
