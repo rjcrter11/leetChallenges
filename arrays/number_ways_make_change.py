@@ -19,7 +19,7 @@ def numberOfWaysToMakeChange(n, denoms):
     return ways[n]
 
 
-num = 6
-denoms = [1, 5]
+num = 10
+denoms = [1, 5, 10, 25]
 
 print(numberOfWaysToMakeChange(num, denoms))
