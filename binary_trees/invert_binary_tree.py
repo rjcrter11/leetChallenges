@@ -4,6 +4,13 @@ should swap every left node in the tree for its corresponding right node.
 '''
 
 
+class BinaryTree:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+
 def invertBinaryTree(tree):
 
     if tree is None:
@@ -15,10 +22,3 @@ def invertBinaryTree(tree):
 
 def swap(tree):
     tree.left, tree.right = tree.right, tree.left
-
-
-class BinaryTree:
-    def __init__(self, value):
-        self.value = value
-        self.left - None
-        self.right = None
