@@ -49,3 +49,27 @@ def postorder(tree, array):
         if current.right:
             stack.append(current.right)
     return array[::-1]
+
+
+def inorderRecursive(tree, array):
+    if tree is not None:
+        inorderRecursive(tree.left, array)
+        array.append(tree.value)
+        inorderRecursive(tree.right, array)
+    return array
+
+
+def preorderRecursive(tree, array):
+    if tree is not None:
+        array.append(tree.value)
+        preorderRecursive(tree.left, array)
+        preorderRecursive(tree.right, array)
+    return array
+
+
+def postorderRecursive(tree, array):
+    if tree is not None:
+        postorderRecursive(tree.left, array)
+        postorderRecursive(tree.right, array)
+        array.append(tree.value)
+    return array
