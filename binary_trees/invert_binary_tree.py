@@ -22,3 +22,20 @@ def invertBinaryTree(tree):
 
 def swap(tree):
     tree.left, tree.right = tree.right, tree.left
+
+
+class BinaryTree2:
+    def __init__(self, value):
+        self.value = value
+        self.right = None
+        self.left = None
+
+
+def invert2(tree):
+    if tree is None:
+        return
+    temp = tree.left
+    tree.left = tree.right
+    tree.right = temp
+    invert2(tree.left)
+    invert2(tree.right)
