@@ -22,3 +22,11 @@ def palindrome(str):
 string = 'abcdcba'
 result = palindrome(string)
 print(result)
+
+
+def palindromeAlt(str):
+    backwards = str[::-1]
+    return backwards == str
+
+
+print(palindromeAlt(string))
