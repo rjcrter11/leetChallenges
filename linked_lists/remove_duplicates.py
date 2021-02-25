@@ -25,3 +25,14 @@ def removeDuplicates(linkedList):
         currentNode.next = nextNode
         currentNode = nextNode
     return linkedList
+
+
+def removedupsAlt(linkedList):
+    current_node = linkedList
+
+    while current_node.next is not None:
+        if current_node.value == current_node.next.value:
+            current_node.next = current_node.next.next
+        else:
+            current_node = current_node.next
+    return linkedList
