@@ -20,3 +20,27 @@ def sorted_squared_array(arr):
 array = [1, 2, 3, 5, 6, 8, 9]
 
 print(sorted_squared_array(array))
+
+
+def sorted_squared_alt(arr):
+
+    sorted_squares = [0 for _ in arr]
+    smallIdx = 0
+    largeIdx = len(arr)-1
+
+    for idx in reversed(range(len(arr))):
+        smallVal = arr[smallIdx]
+        largeVal = arr[largeIdx]
+
+        if abs(smallVal) > abs(largeVal):
+            sorted_squares[idx] = smallVal * smallVal
+            smallIdx += 1
+        else:
+            sorted_squares[idx] = largeVal * largeVal
+            largeIdx -= 1
+    return sorted_squares
+
+
+array2 = [-10, -5, 0, 5, 10]
+
+print(sorted_squared_alt(array2))
