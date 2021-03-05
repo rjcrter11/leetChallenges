@@ -12,6 +12,8 @@ def non_constructible_change(coins):
     coins.sort()
     current_change = 0
 
+    print(coins)
+
     for coin in coins:
         if coin > current_change + 1:
             return current_change + 1
@@ -22,4 +24,4 @@ def non_constructible_change(coins):
 coins = [5, 7, 1, 1, 2, 3, 22]
 
 
-print(non_constructible_change(coins))
+non_constructible_change(coins)
