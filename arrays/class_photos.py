@@ -15,6 +15,8 @@ that follows the stated guidelines can be taken.
 
 redShirts = [5,8,1,3,4]
 blueShirts = [6,9,2,4,5]
+
+output = True // Place all students with blue shirts in the back row
 '''
 
 
