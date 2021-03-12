@@ -39,3 +39,24 @@ def getTreeInfo(node):
     )
     height = max(leftSubTreeInfo.height, rightSubTreeInfo.height) + 1
     return TreeInfo(isBalanced, height)
+
+
+def heightBalancedBTAlt(tree):
+    return isBalancedHelper(tree)[0]
+
+
+def isBalancedHelper(tree):
+    if not tree:
+        return True, -1
+
+    leftBalanced, leftHeight = isBalancedHelper(tree.left)
+
+    if not leftBalanced:
+        return False, 0
+
+    rightBalanced, rightHeight = isBalancedHelper(tree.right)
+
+    if not rightBalanced:
+        return False, 0
+
+    return (abs(leftHeight - rightHeight) < 2), 1 + max(leftHeight, rightHeight)
