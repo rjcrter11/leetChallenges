@@ -1,16 +1,25 @@
 def palindromeCutting(s):
     longest = ""
-    for i in range(len(s)):
-        for j in range(i, len(s)):
-            substring = s[i:j+1]
-            if len(substring) > len(longest) and findPalindrome(substring):
-                longest = substring
+    hasPal = True
+    stringLen = len(s)
+    print(stringLen)
+    while hasPal:
+        for i in range(len(s)):
+            for j in range(i, len(s)):
+                substring = s[i:j+1]
+                if len(substring) > len(longest) and findPalindrome(substring):
+                    longest = substring
+                s = s.replace(longest, "")
+            print(s)
 
-        s = s.replace(longest, "")
-        if findPalindrome(s):
-            substring = s[i:j+1]
-            if len(substring) > len(longest) and findPalindrome(substring):
-                longest = substring
+            if not findPalindrome(s):
+                print('length', len(s))
+                hasPal = False
+
+        # s = s.replace(longest, "")
+        # if findPalindrome(s):
+        #     substring = s[i:j+1]
+        #     if len(substring) > len(longest) and findPalindrome(substring):
 
     return s
 
@@ -27,6 +36,6 @@ def findPalindrome(s):
     return True
 
 
-string = 'abaaac'
+string = 'jkjabacodoc'
 
 print(palindromeCutting(string))
