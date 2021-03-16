@@ -22,3 +22,24 @@ w = 4
 h = 3
 
 print(traverseGraph(w, h))
+
+
+def traverseAlt(width, height):
+    xDistanceToCorner = width-1
+    yDistanceToCorner = height-1
+
+    numerator = factorial(xDistanceToCorner + yDistanceToCorner)
+    denominator = factorial(xDistanceToCorner) * factorial(yDistanceToCorner)
+
+    return numerator // denominator
+
+
+def factorial(num):
+    result = 1
+
+    for n in range(2, num+1):
+        result *= n
+    return result
+
+
+print(traverseAlt(w, h))
