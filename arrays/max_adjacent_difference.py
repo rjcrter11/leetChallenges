@@ -22,3 +22,10 @@ def max_adjacent_diff(a):
 
 input = [-1, 4, 10, 3, -2]
 print(max_adjacent_diff(input))
+
+
+def max_diff_alt(a):
+    return max(abs(a[i]-a[i+1]) for i in range(len(a)-1))
+
+
+print(max_diff_alt(input))
