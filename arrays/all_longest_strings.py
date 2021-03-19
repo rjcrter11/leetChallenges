@@ -22,6 +22,12 @@ def allLongestStrings(arr):
     return output
 
 
+def longestStringsListComp(arr):
+    max_len = max(len(string) for string in arr)
+    output = [string for string in arr if len(string) == max_len]
+    return output
+
+
 inputArray = ["aba", "aa", "ad", "vcd", "aba"]
 
 print(allLongestStrings(inputArray))
