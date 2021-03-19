@@ -29,6 +29,16 @@ def isLucky(n):
     return first_sum == second_sum
 
 
+def isLuckyAlt(n):
+    s = str(n)
+    pivot = len(s)//2
+    left, right = s[:pivot], s[pivot:]
+    return sum(map(int, left)) == sum(map(int, right))
+
+    # as list comprehension
+    # return sum([int(x) for x in left]) == sum[int(x) for x in right]
+
+
 num = 1230
 
-print(isLucky(num))
+print(isLuckyAlt(num))
