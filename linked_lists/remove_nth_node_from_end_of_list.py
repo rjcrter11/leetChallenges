@@ -27,3 +27,22 @@ class Solution:
         slow.next = slow.next.next
 
         return head
+
+
+def remove_nthAlt(head, k):
+
+    count = 1
+    fast = head
+    slow = head
+
+    while count <= k:
+        fast = fast.next
+        count += 1
+    if fast is None:
+        head.value = head.next.value
+        head.next = head.next.next
+        return
+    while fast.next is not None:
+        fast = fast.next
+        slow = slow.next
+    slow.next = slow.next.next
