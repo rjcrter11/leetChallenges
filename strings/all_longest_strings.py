@@ -30,3 +30,12 @@ def allLongestStrings(input):
 
 inputArray = ["aba", "aa", "ad", "vcd", "aba"]
 print(allLongestStrings(inputArray))
+
+
+def longestStringsAlt(input):
+    maximum = max(len(s) for s in input)
+    result = [s for s in input if len(s) == maximum]
+    return result
+
+
+print(longestStringsAlt(inputArray))
