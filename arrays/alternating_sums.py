@@ -32,5 +32,3 @@ def alternatingSums(a):
 
 a = [50, 60, 60, 45, 70]
 print(alternatingSums(a))
-
-print(10 % 2)
