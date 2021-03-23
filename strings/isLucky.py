@@ -34,3 +34,14 @@ def isLucky(n):
 
 n = 1230
 print(isLucky(n))
+
+
+def luckAlt(n):
+    s = str(n)
+    pivot = len(s) // 2
+    left, right = s[:pivot], s[pivot:len(s)]
+
+    return sum([int(x) for x in left]) == sum([int(x) for x in right])
+
+
+print(luckAlt(n))
