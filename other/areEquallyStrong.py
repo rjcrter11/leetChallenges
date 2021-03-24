@@ -23,8 +23,15 @@ def areEquallyStrong(yourLeft, yourRight, friendsLeft, friendsRight):
 
 
 yourLeft = 10
-yourRight = 15
+yourRight = 5
 friendsLeft = 5
-friendsRight = 20
+friendsRight = 10
 
 print(areEquallyStrong(yourLeft, yourRight, friendsLeft, friendsRight))
+
+
+def strongAlt(yourLeft, yourRight, friendsLeft, friendsRight):
+    return sorted([yourLeft, yourRight]) == sorted([friendsLeft, friendsRight])
+
+
+print(strongAlt(yourLeft, yourRight, friendsLeft, friendsRight))
