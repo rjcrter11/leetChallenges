@@ -19,9 +19,7 @@ def avoidObstacles(arr):
     i = 2
     while True:
         if all(x % i != 0 for x in arr):
-
             return i
-        print(i)
         i += 1
 
 
