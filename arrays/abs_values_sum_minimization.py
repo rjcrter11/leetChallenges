@@ -38,3 +38,10 @@ def absoluteValuesSumMinimization(a):
 
 a = [2, 4, 7]
 print(absoluteValuesSumMinimization(a))
+
+
+def absAlt(a):
+    return a[(len(a)-1)//2]
+
+
+print(absAlt(a))
