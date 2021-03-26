@@ -19,7 +19,7 @@ digitDegree(n) = 2.
 
 def digitDegree(n):
 
-    if n < 10:
+    if len(str(n)) == 1:
         return 0
 
     sum_of_digits = sum([int(i) for i in str(n)])
