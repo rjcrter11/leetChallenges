@@ -30,3 +30,19 @@ def firstNonRepeatingCharacter(string):
 
 string = 'abcdcaf'
 print(firstNonRepeatingCharacter(string))
+
+
+def firstNonRepeatingCharacterAlt(string):
+    frequencies = {}
+
+    for char in string:
+        frequencies[char] = frequencies.get(char, 0) + 1
+
+    for idx in range(len(string)):
+        character = string[idx]
+        if frequencies[character] == 1:
+            return idx
+    return -1
+
+
+print(firstNonRepeatingCharacterAlt(string))
