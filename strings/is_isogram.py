@@ -21,3 +21,10 @@ def is_isogram(string):
 string = "Dermatoglyphics"
 
 print(is_isogram(string))
+
+
+def is_isogram_alt(string):
+    return len(string) == len(set(string.lower()))
+
+
+print(is_isogram_alt(string))
