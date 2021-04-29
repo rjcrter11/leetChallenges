@@ -29,3 +29,10 @@ def maskify(cc):
 
 cc = "4556364607935616"
 print(maskify(cc))
+
+
+def maskify_alt(cc):
+    return '#'*(len(cc)-4) + cc[-4:]
+
+
+print(maskify_alt(cc))
