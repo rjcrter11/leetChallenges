@@ -34,3 +34,10 @@ def duplicate_count(s):
 
 string = "ABBA"
 print(duplicate_count(string))
+
+
+def count_dups_alt(s):
+    return len([c for c in set(s.lower()) if s.lower().count(c) > 1])
+
+
+print(count_dups_alt(string))
