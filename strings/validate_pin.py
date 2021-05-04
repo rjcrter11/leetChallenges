@@ -18,3 +18,15 @@ def validate_pin(pin):
 
 pin = "1234"
 print(validate_pin(pin))
+
+
+def validate_pin_alt(pin):
+    if not pin.isdigit():
+        return False
+
+    if len(pin) in [4, 6]:
+        return True
+    return False
+
+
+print(validate_pin_alt(pin))
