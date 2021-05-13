@@ -21,7 +21,12 @@ def descending_order(num):
     return int("".join(listed))
 
 
+def descending_alt(num):
+    return int("".join(sorted(str(num), reverse=True)))
+
+
 nums = 42145
 
 
 print(descending_order(nums))
+print(descending_alt(nums))
