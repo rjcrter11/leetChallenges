@@ -37,5 +37,10 @@ def is_square(n):
         return False
 
 
+def square_alt(n):
+    return n > -1 and (n**0.5) % 1 == 0
+
+
 n = 25
 print(is_square(n))
+print(square_alt(n))
