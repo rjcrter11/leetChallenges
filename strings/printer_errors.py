@@ -36,5 +36,13 @@ def printer_errors(s):
     return f"{count}/{len(s)}"
 
 
+def errors_alt(s):
+
+    error = [x for x in s if x > 'm']
+
+    return f"{len(error)}/{len(s)}"
+
+
 s = "aaaxbbbbyyhwawiwjjjwwm"
 print(printer_errors(s))
+print(errors_alt(s))
