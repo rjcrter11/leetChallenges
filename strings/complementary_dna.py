@@ -20,6 +20,13 @@ def complementary_dna(dna):
     return dna.translate(str.maketrans('ATCG', 'TAGC'))
 
 
+def dna_alt(dna):
+    pairs = {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}
+
+    return ''.join([pairs[x] for x in dna])
+
+
 dna = "ATTGC"
 
 print(complementary_dna(dna))
+print(dna_alt(dna))
