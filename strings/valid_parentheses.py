@@ -49,5 +49,22 @@ def valid_parentheses(s):
     return not stack
 
 
+def parentheses_alt(s):
+    stack = []
+    mapping = {"}": "{", ")": "(", "]": "["}
+
+    for el in s:
+        if el not in mapping:
+            stack.append(el)
+        else:
+            if stack:
+                if mapping[el] != stack.pop():
+                    return False
+            else:
+                stack.append('#')
+
+    return stack == []
+
+
 s = "{[]}"
 print(valid_parentheses(s))
